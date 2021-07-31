@@ -1,1 +1,5 @@
 __pycache__/
+/images
+/tmp
+
+!/image/README.txt
