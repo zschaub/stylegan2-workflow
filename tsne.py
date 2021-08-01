@@ -7,7 +7,7 @@ import numpy as np
 import colorsys
 from shutil import copyfile, rmtree
 from os import path, mkdir
-from os.path import isdir
+from os.path import isdir, basename, normpath, join
 
 import matplotlib.pyplot as plt
 
@@ -310,11 +310,18 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--path', type=str, default='data')
+    parser.add_argument('--output', type=str, default='clusters')
     parser.add_argument('--batch', type=int, default=64)
 
     args = parser.parse_args()
+    
+    dataset_name = basename(normpath(args.path))
 
-    output = 'output'
+    output = args.output
+    if not isdir(output):
+        mkdir(output)
+    
+    output = join(output, dataset_name)
     if isdir(output):
         rmtree(output)
     if not isdir(output):

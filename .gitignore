@@ -3,6 +3,7 @@ __pycache__/
 !images/README.txt
 
 /tmp
+/clusters
 /.ipynb_checkpoints
 
 
