@@ -1,5 +1,9 @@
 __pycache__/
 /images
-/tmp
+!images/README.txt
 
-!/image/README.txt
+/tmp
+/.ipynb_checkpoints
+
+
+
